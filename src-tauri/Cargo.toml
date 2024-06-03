@@ -5,7 +5,7 @@ description = ""
 authors = ["you"]
 default-run = "app"
 edition = "2021"
-rust-version = "1.62"
+rust-version = "1.75"
 
 
 [lib]
@@ -29,20 +29,11 @@ tokio = { version = "1.34.0", features = [
 log = "0.4.21"
 crossbeam-channel = "0.5.12"
 strum = { version = "0.26.2", features = ["derive"] }
-tauri-plugin-log = "2.0.0-beta"
-tauri-plugin-window-state = "2.0.0-beta"
-rspc = "0.2.0"
-specta = "=2.0.0-rc.12"
 prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.11", default-features = false, features = [
     "sqlite",
     "migrations",
     "mocking",
-    "specta",
 
-] }
-tauri-specta = { version = "=2.0.0-rc.10", features = [
-    "javascript",
-    "typescript",
 ] }
 
 [features]
@@ -50,6 +41,7 @@ tauri-specta = { version = "=2.0.0-rc.10", features = [
 # If you use cargo directly instead of tauri's cli you can use this feature flag to switch between tauri's `dev` and `build` modes.
 # DO NOT REMOVE!!z
 custom-protocol = ["tauri/custom-protocol"]
+
 
 [workspace]
 members = ["prisma-cli"]
